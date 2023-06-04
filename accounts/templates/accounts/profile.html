@@ -1,10 +1,10 @@
 {% extends 'accounts/base.html' %}
 {% block body %}
-{% if user.is_authenticated %}
-hello {{user.username}}
-{% else  %}
-<script>
-    window.location.href = "{% url 'accounts:login' %}";
-</script>{% endif %}
+<div class="name">
 
+hello {{user.username}}
+</div>
+
+
+<img width="100px" height="100px" src="{{ user.profile.image.url }}" alt="">
 {% endblock %}
